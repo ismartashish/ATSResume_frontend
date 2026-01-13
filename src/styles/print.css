@@ -1,0 +1,31 @@
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #print-area,
+  #print-area * {
+    visibility: visible;
+  }
+
+  #print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 40px;
+    background: white;
+  }
+
+  /* Remove UI */
+  .editor-panel,
+  button,
+  .score-circle {
+    display: none !important;
+  }
+
+  /* Resume typography */
+  h1, h2 {
+    color: black;
+  }
+}

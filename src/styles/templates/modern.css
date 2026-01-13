@@ -1,0 +1,76 @@
+.modern-resume {
+  display: grid;
+  grid-template-columns: 32% 68%;
+  min-height: 1123px;
+  background: white;
+  font-family: "Georgia", serif;
+}
+
+.left-col {
+  background: #2f2f2f;
+  color: white;
+  padding: 30px;
+}
+
+.left-col h1 {
+  font-size: 28px;
+  margin-bottom: 4px;
+}
+
+.left-col .title {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.left-col h3 {
+  margin-top: 25px;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.left-col p, .left-col li {
+  font-size: 12px;
+  margin: 4px 0;
+}
+
+.right-col {
+  padding: 40px;
+}
+
+.right-col h2 {
+  border-bottom: 2px solid #f4b400;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+
+.job strong {
+  display: block;
+}
+
+.job span {
+  font-size: 12px;
+  color: gray;
+}
+
+.job ul {
+  padding-left: 18px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #print-area, #print-area * {
+    visibility: visible;
+  }
+
+  #print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 210mm;
+    height: 297mm;
+  }
+}

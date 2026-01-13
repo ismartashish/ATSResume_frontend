@@ -1,0 +1,311 @@
+.result-wrapper {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  background: #f6f8fb;
+}
+
+/* LEFT */
+.resume-preview {
+  flex: 1;
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+/* RIGHT */
+.ats-panel {
+  width: 420px;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+/* SCORE RING */
+.score-card {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 10px solid #22c55e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin: auto;
+}
+
+.strength {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.label {
+  color: gray;
+  font-size: 14px;
+}
+
+/* CHECKLIST */
+.ats-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.ats-list li {
+  padding: 8px 0;
+  font-weight: 500;
+}
+
+.ok::before {
+  content: "✔ ";
+  color: green;
+}
+
+.warn::before {
+  content: "⚠ ";
+  color: red;
+}
+
+/* MISSING + AI */
+.missing li,
+.ai-warn li {
+  color: red;
+}
+
+.ai-warn li {
+  text-decoration: underline;
+}
+
+/* BUTTON */
+.template-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.diagnostic-box {
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  font-size: 14px;
+}
+
+.diagnostic-box h4 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.diagnostic-box ul,
+.diagnostic-box ol {
+  padding-left: 20px;
+}
+
+.good {
+  background: #ecfdf5;
+  border-left: 6px solid #22c55e;
+}
+
+.bad {
+  background: #fef2f2;
+  border-left: 6px solid #ef4444;
+}
+
+.warn {
+  background: #fff7ed;
+  border-left: 6px solid #f97316;
+}
+
+.info {
+  background: #eff6ff;
+  border-left: 6px solid #3b82f6;
+}
+
+.quick {
+  background: #f8fafc;
+  border-left: 6px solid #6366f1;
+}
+
+.impact {
+  color: #ef4444;
+  font-size: 12px;
+  margin-left: 6px;
+}
+
+.hint {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #374151;
+}
+.resume-text-preview {
+  margin-top: 20px;
+}
+
+.resume-text {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 15px;
+  border-radius: 8px;
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.skill-found {
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 600;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.skill-missing {
+  background: #fee2e2;
+  color: #991b1b;
+  font-weight: 600;
+  padding: 2px 4px;
+  border-radius: 4px;
+  text-decoration: underline;
+}
+.sample {
+  background: #f0fdf4;
+  border-left: 6px solid #16a34a;
+}
+.skill-repeat {
+  background: #fef3c7;
+  color: #92400e;
+  font-weight: 600;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+.ai-warning {
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+.premium-box {
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  padding: 18px;
+  border-radius: 12px;
+  border-left: 6px solid #6366f1;
+  margin-bottom: 20px;
+}
+
+.premium-box h4 {
+  margin-bottom: 10px;
+}
+/* =========================
+   📱 MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 1024px) {
+  .result-wrapper {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .ats-panel {
+    width: 100%;
+  }
+}
+
+/* Phones */
+@media (max-width: 640px) {
+  .result-wrapper {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .resume-preview,
+  .ats-panel {
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  /* Score circle smaller */
+  .circle {
+    width: 90px;
+    height: 90px;
+    border-width: 8px;
+    font-size: 24px;
+  }
+
+  .strength {
+    font-size: 14px;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  /* Diagnostic boxes */
+  .diagnostic-box {
+    padding: 14px;
+    font-size: 13px;
+  }
+
+  .diagnostic-box h4 {
+    font-size: 14px;
+  }
+
+  /* Resume preview text */
+  .resume-text {
+    font-size: 12px;
+    max-height: 220px;
+  }
+
+  /* ATS checklist */
+  .ats-list li {
+    font-size: 14px;
+    padding: 6px 0;
+  }
+
+  /* Buttons */
+  .template-btn {
+    font-size: 15px;
+    padding: 14px;
+    border-radius: 8px;
+  }
+
+  /* Premium box */
+  .premium-box {
+    padding: 14px;
+    font-size: 13px;
+  }
+
+  /* Subtitle spacing */
+  .subtitle {
+    font-size: 13px;
+    margin-bottom: 14px;
+  }
+}
+
+/* Very small devices (old Android / iPhone SE) */
+@media (max-width: 380px) {
+  .circle {
+    width: 80px;
+    height: 80px;
+    font-size: 22px;
+  }
+
+  .template-btn {
+    font-size: 14px;
+    padding: 12px;
+  }
+}

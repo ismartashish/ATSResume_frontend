@@ -1,0 +1,137 @@
+.editor-wrapper {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+}
+
+.editor textarea {
+  width: 600px;
+  height: 500px;
+  padding: 15px;
+}
+
+.editor-panel {
+  width: 250px;
+  text-align: center;
+}
+
+.score-circle {
+  font-size: 40px;
+  font-weight: bold;
+}
+.apply-btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .resume {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  .editor-panel {
+    display: none;
+  }
+}
+.editor-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* LEFT SIDE */
+.editor {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* RIGHT PANEL */
+.editor-panel {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* SCORE */
+.score-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  border: 10px solid #22c55e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+}
+.editor-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  background: white;
+  border: 2px solid #4f46e5;
+  color: #4f46e5;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.link-btn {
+  background: transparent;
+  border: none;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #print-area,
+  #print-area * {
+    visibility: visible;
+  }
+
+  #print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}

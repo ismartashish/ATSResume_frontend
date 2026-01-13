@@ -1,0 +1,67 @@
+.resume {
+  background: white;
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  font-family: Georgia, serif;
+  line-height: 1.6;
+}
+
+/* ===== MODERN ===== */
+.resume.modern .header {
+  border-bottom: 4px solid #fbbf24;
+  margin-bottom: 20px;
+}
+
+.resume.modern h1 {
+  font-size: 36px;
+}
+
+.resume.modern h1 span {
+  font-weight: 300;
+}
+
+.resume.modern .section h2 {
+  margin-top: 25px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* ===== CLASSIC ===== */
+.resume.classic h1 {
+  text-align: center;
+}
+
+.resume.classic .contact {
+  text-align: center;
+  font-size: 14px;
+}
+
+.resume.classic h2 {
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+
+/* ===== MINIMAL ===== */
+.resume.minimal {
+  font-family: Arial, sans-serif;
+}
+
+.resume.minimal h1 {
+  font-size: 28px;
+}
+
+.resume.minimal h3 {
+  margin-top: 18px;
+}
+
+/* ===== PRINT ===== */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .resume {
+    visibility: visible;
+    position: absolute;
+    inset: 0;
+  }
+}
