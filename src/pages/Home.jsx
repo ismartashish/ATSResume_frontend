@@ -18,15 +18,26 @@ export default function Home() {
     }
 
     const formData = new FormData();
+
+    // ✅ MUST match backend parameter names exactly
     formData.append("resume", file);
-    formData.append("jobDescription", jobDesc);
+    formData.append("job_description", jobDesc);
 
     try {
       setLoading(true);
-      const res = await api.post("/resume/analyze", formData);
-      navigate("/result", { state: res.data.data });
+
+      const res = await api.post("/resume/analyze", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      });
+
+      // ✅ Backend returns data directly, not inside data.data
+      navigate("/result", { state: res.data });
+
     } catch (err) {
-      alert("Resume analysis failed. Try again.");
+      console.error("API ERROR:", err.response?.data || err.message);
+      alert("Resume analysis failed. Check console for details.");
     } finally {
       setLoading(false);
     }
@@ -54,10 +65,10 @@ export default function Home() {
 
         {/* FILE UPLOAD */}
         <div className="input-group">
-          <label>Upload Resume (PDF / TXT)</label>
+          <label>Upload Resume (PDF only)</label>
           <input
             type="file"
-            accept=".pdf,.txt"
+            accept=".pdf"
             onChange={(e) => setFile(e.target.files[0])}
           />
           {file && <span className="file-name">{file.name}</span>}
@@ -81,38 +92,6 @@ export default function Home() {
         <p className="privacy">
           🔒 Your resume is never stored or shared.
         </p>
-      </section>
-
-      {/* HOW IT WORKS */}
-      <section className="how-it-works">
-        <h2>How It Works</h2>
-
-        <div className="steps">
-          <div className="step">
-            <span>1</span>
-            <p>Upload your resume</p>
-          </div>
-          <div className="step">
-            <span>2</span>
-            <p>Paste job description</p>
-          </div>
-          <div className="step">
-            <span>3</span>
-            <p>Get ATS score & fixes</p>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURES */}
-      <section className="features">
-        <h2>What You’ll Get</h2>
-        <ul>
-          <li>✅ ATS resume score</li>
-          <li>✅ Missing skills detection</li>
-          <li>✅ AI & repetitive content warnings</li>
-          <li>✅ Resume improvement suggestions</li>
-          <li>✅ Resume templates with fixes</li>
-        </ul>
       </section>
     </div>
   );
